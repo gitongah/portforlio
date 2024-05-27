@@ -1,27 +1,18 @@
-import { useState } from 'react'
-import About from './components/specific/About'
+// Bringing in the required import from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
-import './assets/styles/main.css'
-import Home from './components/specific/Home'
-import Project from './components/specific/Project'
-import Services from './components/specific/Services'
-import Skills from './components/specific/Skills'
-import Contact from './components/specific/Contact'
+import Navigation from './components/specific/Navigation';
 
 function App() {
-
+  // The Outlet component will conditionally swap between the different pages according to the URL
   return (
-    <div>
-      <Home/>
-      <About/>
-      <Project/>
-      <Services/>
-      <Skills/>
-      <Contact/>
-
-
-    </div>
-  )
+    <>
+      <Navigation />
+      <main className="mx-3">
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
-export default App
+export default App;
