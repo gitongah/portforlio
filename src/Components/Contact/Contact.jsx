@@ -8,7 +8,7 @@ import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
-  
+
   const onSubmit = async (event) => {
       event.preventDefault();
       setResult("Sending....");
@@ -41,7 +41,8 @@ const Contact = () => {
       <div className="contact-section">
         <div className="contact-left">
           <h1>Lets talk</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus provident incidunt distinctio, quaerat pariatur aperiam, dolore sunt quibusdam maxime ducimus omnis facere, doloribus quasi tempore mollitia nam a ipsa cum.</p>
+          <p>Proactive and personable aspiring Entrepreneur with a vision of creating ideas that solve real world problems by 
+          working with clients to understand their requirements and translate them to detailed technology solutions.</p>
           <div className="contact-details">
             <div className="contact-detail">
               <img src={mail_icon} alt="" /> <p>mbaabugitonga@gmail.com</p>

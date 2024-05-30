@@ -7,12 +7,17 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export const Navbar = () => {
 
+  window.addEventListener('scroll', function(){
+  const navbar=this.document.querySelector('.navbar');
+  navbar.classList.toggle('sticky', window.scrollY>0)
+})
 
-  const [menu, setMenu] = useState('about')
+
+  const [menu, setMenu] = useState('')
   return (
     <div className='navbar'>
 
-      <img src={logo} alt="Edwin Mbaabu logo" />
+      {/* <img src={logo} alt="Edwin Mbaabu logo" /> */}
       <ul className='nav-menu'>
         <li>
           <AnchorLink className='anchor-link' href='#home'>
@@ -30,9 +35,9 @@ export const Navbar = () => {
           </AnchorLink>{menu === 'services' ? <img src={underline} alt=' ' /> : <></>}
         </li>
         <li>
-          <AnchorLink className='anchor-link' offset={50} href='#portfolio'>
-            <p onClick={() => setMenu('work')}>Portfolio</p>
-          </AnchorLink>{menu === 'work' ? <img src={underline} alt=' ' /> : <></>}
+          <AnchorLink className='anchor-link' offset={50} href='#mywork'>
+            <p onClick={() => setMenu('mywork')}>Portfolio</p>
+          </AnchorLink>{menu === 'mywork' ? <img src={underline} alt=' ' /> : <></>}
         </li>
         <li>
           <AnchorLink className='anchor-link' offset={50} href='#contact'>
@@ -41,7 +46,7 @@ export const Navbar = () => {
         </li>
       </ul>
 
-      <div className='nav-connect' > <AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
+      {/* <div className='nav-connect' > <AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div> */}
 
     </div>
   )

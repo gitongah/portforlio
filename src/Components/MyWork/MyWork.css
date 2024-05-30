@@ -8,11 +8,12 @@
 }
 .mywork-title{
   position: relative;
+  margin-top: 100px
 }
 .mywork-title h1{
   padding: 0px 30px;
-  font-size: 80px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 300;
 }
 .mywork-title img{
   position: absolute;

@@ -9,6 +9,7 @@
 }
 .service-title{
   position: relative;
+  margin-top: 80px
 
 }
 .service-title h1{
@@ -35,7 +36,7 @@
   cursor: pointer;
 }
 .services-container{
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
   margin-bottom: 80px;
