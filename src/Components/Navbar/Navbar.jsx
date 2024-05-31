@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { useRef } from 'react';
 
 import './Navbar.css'
 import logo from '../../assets/logo.svg'
 import underline from '../../assets/nav_underline.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import menu_open from '../../assets/menu_open.svg'
+import menu_close from '../../assets/menu_close.svg'
+
 
 export const Navbar = () => {
 
@@ -14,11 +18,22 @@ export const Navbar = () => {
 
 
   const [menu, setMenu] = useState('')
+  const menuRef = useRef();
+
+  const openMenue = ()=>{
+    menuRef.current.style.right='0'
+  }
+
+  const closeMenue = ()=>{
+    menuRef.current.style.right='-350px'
+  }
   return (
     <div className='navbar'>
 
       {/* <img src={logo} alt="Edwin Mbaabu logo" /> */}
-      <ul className='nav-menu'>
+      <img className="nav-mob-open"src={menu_open} onClick= {openMenue }alt="" />
+      <ul className='nav-menu' ref={menuRef}>
+        <img className="nav-mob-close"src={menu_close} onClick={closeMenue}  alt="" />
         <li>
           <AnchorLink className='anchor-link' href='#home'>
             <p onClick={() => setMenu('home')}>Home</p>

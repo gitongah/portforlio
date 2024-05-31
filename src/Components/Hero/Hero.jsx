@@ -25,8 +25,8 @@ const Hero = () => {
         who have the same mindset as I do. Feel free to contact me and lets have a chart.
         </p>
         <div className="hero-action">
-          <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
-          <button id="downloadResume" className="hero-resume">My resume</button>
+          <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With me</AnchorLink></div>
+          <div id="downloadResume" className="hero-resume">My resume</div>
         </div>
       </div>
   );
