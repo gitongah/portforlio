@@ -66,6 +66,7 @@
     display: block;
     position: fixed;
     right: 30px;
+    cursor: pointer;
   }
   .nav-mob-close{
     display: block;
@@ -73,6 +74,7 @@
     top: 30px;
     left: 290px;
     width: 30px;
+    cursor: pointer;
   }
   .nav-menu{
     position: fixed;

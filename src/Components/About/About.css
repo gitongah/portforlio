@@ -150,7 +150,23 @@
   flex-direction: column;
 }
 .col-left{
-  display: none;
+  position: relative;
+  width: 80%;
+}
+.col-left .img-card{
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+
+}
+.col-left .img-card img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%;
 }
 .about-paragraph{
     font-size: 18px;
