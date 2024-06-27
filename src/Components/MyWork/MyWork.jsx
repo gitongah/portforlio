@@ -1,30 +1,81 @@
-import React from 'react'
-import './MyWork.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import mywork_data from '../../assets/mywork_data'
-import arrow_icon from '../../assets/arrow_icon.svg'
-const MyWork = () => {
+import React from "react";
+import "./MyWork.css";
+import cover1 from "../../assets/bookSearch.png";
+import cover2 from "../../assets/noteTaker.png";
+import cover3 from "../../assets/bootPrint.png";
+import cover4 from "../../assets/employeeTracker.png";
+// import cover5 from "../../assets/portfolio5.png";
+// import cover6 from "../../assets/portfolio6.jpg";
+
+// IMAGES FOR PRIVATE USE ONLY (NO CREATIVE COMMONS)
+
+const data = [
+  {
+    id: 1,
+    image: cover1,
+    title: "Book Search",
+    github: "https://github.com/gitongah/BookSearchEngine",
+    demo: "https://booksearchengine-jtwi.onrender.com",
+  },
+  {
+    id: 2,
+    image: cover2,
+    title: "Note Taker",
+    github: "https://github.com/gitongah/Notes-taker",
+    demo: "https://notes-taker-2oa4.onrender.com",
+  },
+  {
+    id: 3,
+    image: cover3,
+    title: "Boot Print",
+    github: "https://github.com/ZachariahKB/bootPrint",
+    demo: "https://project-3-il5t.onrender.com",
+  },
+  {
+    id: 4,
+    image: cover4,
+    title: "Employee Tracker",
+    github: "https://github.com/gitongah/Employee-Tracker",
+    demo: "https://drive.google.com/file/d/1U1xkw_nY7vJrgEuaTRGMa9xFS4EJLRCc/view",
+  },
+];
+
+function Portfolio() {
   return (
-    <div className='mywork' id='mywork'>
-      <div className="mywork-title">
-        <h1>My Latest Work</h1>
-        <img src={theme_pattern} alt="" />
-      </div>
+    <section id="portfolio">
+      <h5>My Recent Work</h5>
+      <h2>Portfolio</h2>
 
-
-      <div className="mywork-container">
-        {mywork_data.map((work, index)=>{
-          return <img key={index} src={work.w_img} alt="my work image" />
+      <div className="container portfolio__container">
+        {data.map(({ id, image, title, github, demo }) => {
+          return (
+            <article key={id} className="portfolio__item">
+              <div className="portfolio__item-image">
+                <img src={image} alt={title} />
+              </div>
+              <h3>{title}</h3>
+              <div className="portfolio__item-cta">
+                <a
+                  href={github}
+                  className="btn"
+                  target="_blank"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={demo}
+                  className="btn btn-primary"
+                  target="_blank"
+                >
+                  Live Site
+                </a>
+              </div>
+            </article>
+          );
         })}
       </div>
-
-      <div className="mywork-showmore">
-        <p>Show More</p>
-        <img src={arrow_icon} alt="" />
-      </div>
-
-    </div>
-  )
+    </section>
+  );
 }
 
-export default MyWork
+export default Portfolio;

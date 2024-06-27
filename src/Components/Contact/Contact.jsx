@@ -1,73 +1,74 @@
-import React from 'react'
-import './Contact.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import mail_icon from '../../assets/mail_icon.svg'
-import location_icon from '../../assets/location_icon.svg'
-import call_icon from '../../assets/call_icon.svg'
+import React from "react";
+import "./Contact.css";
+import { HiOutlineMail } from "react-icons/hi";
+import { FiLinkedin, FiGithub } from "react-icons/fi";
 
-
-const Contact = () => {
-  const [result, setResult] = React.useState("");
-
-  const onSubmit = async (event) => {
-      event.preventDefault();
-      setResult("Sending....");
-      const formData = new FormData(event.target);
-
-      formData.append("access_key", "c8558921-db5f-4ead-864f-addc5dbf8456");
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setResult("Form Submitted Successfully");
-        event.target.reset();
-      } else {
-        console.log("Error", data);
-        setResult(data.message);
-      }
-    };
-
+function Contact() {
   return (
-    <div className='contact' id='contact'>
-      <div className="contact-title">
-        <h1>Get in touch</h1>
-        <img src={theme_pattern} alt="" />
-      </div>
-      <div className="contact-section">
-        <div className="contact-left">
-          <h1>Lets talk</h1>
-          <p>Proactive and personable aspiring Entrepreneur with a vision of creating ideas that solve real world problems by 
-          working with clients to understand their requirements and translate them to detailed technology solutions.</p>
-          <div className="contact-details">
-            <div className="contact-detail">
-              <img src={mail_icon} alt="" /> <p>mbaabugitonga@gmail.com</p>
-            </div>
-            <div className="contact-detail">
-              <img src={call_icon} alt="" /> <p>+15105066172</p>
-            </div>
-            <div className="contact-detail">
-              <img src={location_icon} alt="" /> <p>CA United States</p>
-            </div>
-          </div>
+    <section id="contact">
+      <h5>Get in Touch</h5>
+      <h2>Contact Me</h2>
+
+      <div className="container contact__container">
+        <div className="contact__options">
+          <article className="contact__option">
+            <HiOutlineMail className="contact__option-icon"/>
+            <h4>Email</h4>
+            <a href="mailto:mbaabugitonga@gmail.com" target="_blank" className="">
+              Send a message
+            </a>
+          </article>
+          <article className="contact__option">
+            <FiLinkedin className="contact__option-icon"/>
+            <h4>LinkedIn</h4>
+            <a
+              href="https://www.linkedin.com/in/edwin-mbaabu-a07b7514a/"
+              target="_blank"
+              className=""
+            >
+              Connect with me
+            </a>
+          </article>
+          <article className="contact__option">
+            <FiGithub className="contact__option-icon"/>
+            <h4>GitHub</h4>
+            <a
+              href="https://github.com/gitongah"
+              target="_blank"
+              className=""
+            >
+              Browse my projects
+            </a>
+          </article>
         </div>
-        <form onSubmit={onSubmit} className='contact-right'>
-          <label htmlFor="">Your Name </label>
-          <input type="text" placeholder='Enter your name' name='name' />
-          <label htmlFor="">Your Email</label>
-          <input type="email" placeholder='Enter your email' name='email' />
-          <label htmlFor="">Write your message here</label>
-          <textarea name="message" rows='8' placeholder='Enter your message'></textarea>
-          <button type='submit' className="contact-submit">Submit now</button>
+        
+        {/* START CONTACT FORM*/}
+        <form>
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          />
+          <textarea
+            name="message"
+            rows="7"
+            placeholder="Type your message here"
+            required
+          ></textarea>
+          <button type="submit" id="contact__btn" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       </div>
-
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Contact
+export default Contact;
