@@ -1,7 +1,7 @@
 import React from "react";
 import './Hero.css'
 import Me from "../../assets/kato1.jpeg";
-import HeroSocials from "./HeroSocials";
+import HeroSocials from "./HeroSocials.jsx";
 function Hero() {
   return (
     <>
