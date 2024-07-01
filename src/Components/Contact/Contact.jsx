@@ -11,37 +11,41 @@ function Contact() {
 
       <div className="container contact__container">
         <div className="contact__options">
-          <article className="contact__option">
-            <HiOutlineMail className="contact__option-icon"/>
-            <h4>Email</h4>
-            <a href="mailto:mbaabugitonga@gmail.com" target="_blank" className="">
+          <a href="mailto:mbaabugitonga@gmail.com" target="_blank" className="">
+            <article className="contact__option">
+              <HiOutlineMail className="contact__option-icon" />
+              <h4>Email</h4>
               Send a message
-            </a>
-          </article>
-          <article className="contact__option">
-            <FiLinkedin className="contact__option-icon"/>
-            <h4>LinkedIn</h4>
-            <a
-              href="https://www.linkedin.com/in/edwin-mbaabu-a07b7514a/"
-              target="_blank"
-              className=""
-            >
+            </article>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/edwin-mbaabu-a07b7514a/"
+            target="_blank"
+            className=""
+          >
+            <article className="contact__option">
+              <FiLinkedin className="contact__option-icon" />
+              <h4>LinkedIn</h4>
+
               Connect with me
-            </a>
-          </article>
-          <article className="contact__option">
-            <FiGithub className="contact__option-icon"/>
-            <h4>GitHub</h4>
-            <a
-              href="https://github.com/gitongah"
-              target="_blank"
-              className=""
-            >
+
+            </article>
+          </a>
+          <a
+            href="https://github.com/gitongah"
+            target="_blank"
+            className=""
+          >
+            <article className="contact__option">
+              <FiGithub className="contact__option-icon" />
+              <h4>GitHub</h4>
+
               Browse my projects
-            </a>
-          </article>
+
+            </article>
+          </a>
         </div>
-        
+
         {/* START CONTACT FORM*/}
         <form>
           <input
